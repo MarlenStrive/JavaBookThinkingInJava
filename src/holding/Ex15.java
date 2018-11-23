@@ -6,17 +6,18 @@ public class Ex15 {
     public static void main(String[] args) {
 
         String s = "+U+n+c---+e+r+t---+a+i+n+t+y---+ -+r+u--+l+e+s---";
-        String[] ss = s.split("");
-        Stack<String> stack = new Stack<>();
+        //String[] ss = s.split(""); // s.toCharArray()
+        char[] ss = s.toCharArray();
+        Stack<Character> stack = new Stack<>();
 
         int i = 0;
         while(i < ss.length) {
             switch (ss[i]) {
-                case "+":
+                case '+':
                     stack.push(ss[i + 1]);
                     i+=2;
                     break;
-                case "-":
+                case '-':
                     System.out.print(stack.pop());
                     i++;
                     break;
